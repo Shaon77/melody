@@ -127,24 +127,24 @@ class PlaylistController extends Controller
     public function handleUploadPlaylistSong(Request $request)
     {
 
-          // $albums=Album::all();
+           $albums=Album::all();
            $playlistName=$request->input('playlistName');
-            return view('files.PlaylistSongAdd2')->with('playlistName', $playlistName);
+            return view('files.PlaylistSongAdd2')->with(array('albums' => $albums))->with('playlistName', $playlistName);
 
 
     }
 
 
-    public function ShowPlaylistAlbumSongs($id,$playlistName)
+    public function ShowPlaylistAlbumSongs($id)
     {
 
-        $albums=Album::all();
-       // $albumName=Album::find($id);
+        //$albums=Album::all();
+        $album=Album::find($id);
        // $songs=DB::table('files')->where('albumName', $albumName->albumName)->first();
         //$u = DB::table('users')->where('name', 'John')->first();
-      //  $songs=UploadedFile::where('albumName', $albumName->albumName)->get();
+        $songs=UploadedFile::where('albumName', $album->albumName)->get();
 
 
-         return view('files.PASS')->with(array('albums' => $albums))->with('playlistName',$playlistName);
+         return view('files.PASS')->with(array('songs' => $songs));
     }
 }

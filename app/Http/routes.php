@@ -51,7 +51,7 @@ Route::get('/deletePlaylist/{id}', ['as' => 'deletePlaylist', 'uses' => 'Playlis
 
 Route::get('playlistaddsong','PlaylistController@addSong');
 Route::post('/handleUploadPlaylistSong','PlaylistController@handleUploadPlaylistSong');
-Route::get('/ShowPlaylistAlbumSongs{id,playlistName}',['as' => 'ShowPlaylistAlbumSongs', 'uses' =>'PlaylistController@ShowPlaylistAlbumSongs']);
+Route::get('/ShowPlaylistAlbumSongs{id}',['as' => 'ShowPlaylistAlbumSongs', 'uses' =>'PlaylistController@ShowPlaylistAlbumSongs']);
 //Route::get('/PASS{id,playlistName}',['as' => 'PASS', 'uses' =>])
 
 

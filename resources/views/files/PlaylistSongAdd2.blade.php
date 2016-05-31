@@ -8,11 +8,13 @@
 <ul>
 
     @foreach($albums as $album)
-    <li> {{ $album->albumName }} {{ link_to_route('ShowPlaylistAlbumSongs', 'Expand', [$album->id,$playlistName]) }} </li>
+    <li> {{ $album->albumName }} {{ link_to_route('ShowPlaylistAlbumSongs', 'expand', [$album->id]) }} </li>
 
 
 
     @endforeach
+    <br/>
+    {{ $playlistName}}
 
 
 </ul>
