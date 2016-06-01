@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.app')
 @section('content')
 <h2> Artists </h2>
 
@@ -16,3 +16,4 @@
 
 
 </ul>
+@endsection

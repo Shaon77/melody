@@ -18,6 +18,10 @@ Route::get('/', function () {
 
 Route::group(['middleware' => ['web']],function() {
 
+	Route::auth();
+
+Route::get('/home', 'HomeController@index');
+
  Route::get('upload','FilesController@upload'); 	
 Route::get('/deleteFile/{id}', ['as' => 'deleteFile', 'uses' => 'FilesController@deleteFile']);
 Route::get('/playCheck{id}', ['as' => 'playCheck', 'uses' => 'FilesController@play']);
@@ -51,8 +55,10 @@ Route::get('/deletePlaylist/{id}', ['as' => 'deletePlaylist', 'uses' => 'Playlis
 
 Route::get('playlistaddsong','PlaylistController@addSong');
 Route::post('/handleUploadPlaylistSong','PlaylistController@handleUploadPlaylistSong');
-Route::get('/ShowPlaylistAlbumSongs{id}',['as' => 'ShowPlaylistAlbumSongs', 'uses' =>'PlaylistController@ShowPlaylistAlbumSongs']);
-//Route::get('/PASS{id,playlistName}',['as' => 'PASS', 'uses' =>])
+Route::get('/ShowPlaylistAlbumSongs/{id}/{name}',['as' => 'ShowPlaylistAlbumSongs', 'uses' =>'PlaylistController@ShowPlaylistAlbumSongs']);
+Route::get('/addToPlaylist/{id}/{name}',['as' => 'addToPlaylist', 'uses' => 'PlaylistController@addToPlaylist']);
 
 
 });
+
+

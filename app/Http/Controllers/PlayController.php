@@ -19,6 +19,10 @@ class PlayController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         //
@@ -142,7 +146,7 @@ class PlayController extends Controller
         $songs=UploadedFile::where('artistName', $artistName->artistName)->get();
 
 
-         return view('files.artistSongs')->with(array('songs' => $songs));
+         return view('files.artistsongs')->with(array('songs' => $songs));
        // return view('files.albumSongs')->with('songs',$albumName);
         //return view('files.albumSongs')->with('songs',$albumName);
 

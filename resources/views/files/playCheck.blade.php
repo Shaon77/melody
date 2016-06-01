@@ -1,3 +1,5 @@
+@extends('layouts.app')
+@section('content')
 <!DOCTYPE <!DOCTYPE html>
 <html>
 <head>
@@ -21,3 +23,5 @@ Your browser does not support the audio element.
 
 </body>
 </html>
+
+@endsection

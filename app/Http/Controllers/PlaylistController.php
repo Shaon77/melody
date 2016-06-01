@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Playlist;
 use App\Album;
 use App\UploadedFile;
+use App\PlaylistSong;
 
 class PlaylistController extends Controller
 {
@@ -128,14 +129,14 @@ class PlaylistController extends Controller
     {
 
            $albums=Album::all();
-           $playlistName=$request->input('playlistName');
-            return view('files.PlaylistSongAdd2')->with(array('albums' => $albums))->with('playlistName', $playlistName);
+           $PlaylistName=$request->input('playlistName');
+            return view('files.PlaylistSongAdd2')->with(array('albums' => $albums))->with('playlistName', $PlaylistName);
 
 
     }
 
 
-    public function ShowPlaylistAlbumSongs($id)
+    public function ShowPlaylistAlbumSongs($id,$name)
     {
 
         //$albums=Album::all();
@@ -145,6 +146,21 @@ class PlaylistController extends Controller
         $songs=UploadedFile::where('albumName', $album->albumName)->get();
 
 
-         return view('files.PASS')->with(array('songs' => $songs));
+         return view('files.PASS')->with(array('songs' => $songs))->with('playlistName',$name);
+    }
+
+    public function addToPlaylist($id,$name)
+    {
+        playlistSong::create([
+                    'playlistName' => $name,'songId' =>$id
+
+                    ]);
+         $albums=Album::all();
+          $PlaylistName=$name;
+            return view('files.PlaylistSongAdd2')->with(array('albums' => $albums))->with('playlistName', $PlaylistName);
+        //return redirect()->to('/addtoPlaylist');
+
+
+
     }
 }

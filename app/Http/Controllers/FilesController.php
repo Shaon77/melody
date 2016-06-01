@@ -22,6 +22,7 @@ class FilesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
     {
         //
