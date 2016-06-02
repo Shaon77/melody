@@ -23,6 +23,14 @@ Route::group(['middleware' => ['web']],function() {
 Route::get('/home', 'HomeController@index');
 Route::get('/admin','AdminController@index');
 
+
+Route::get('/search','SearchController@type');
+Route::post('/handleSearch','SearchController@getbox');
+Route::post('/handleSongName','SearchController@songName');
+Route::post('/handleAlbumName','SearchController@albumName');
+Route::post('/handleArtistName','SearchController@artistName');
+
+
  Route::get('upload','FilesController@upload');	
 Route::get('/deleteFile/{id}', ['as' => 'deleteFile', 'uses' => 'FilesController@deleteFile']);
 Route::get('/playCheck{id}', ['as' => 'playCheck', 'uses' => 'FilesController@play']);
@@ -58,6 +66,10 @@ Route::get('playlistaddsong','PlaylistController@addSong');
 Route::post('/handleUploadPlaylistSong','PlaylistController@handleUploadPlaylistSong');
 Route::get('/ShowPlaylistAlbumSongs/{id}/{name}',['as' => 'ShowPlaylistAlbumSongs', 'uses' =>'PlaylistController@ShowPlaylistAlbumSongs']);
 Route::get('/addToPlaylist/{id}/{name}',['as' => 'addToPlaylist', 'uses' => 'PlaylistController@addToPlaylist']);
+
+
+Route::get('/showplaylist','ShowPlaylistController@show');
+Route::get('/expandSongs{id}', ['as' => 'expandSongs', 'uses' => 'ShowPlaylistController@expand']);
 
 
 });

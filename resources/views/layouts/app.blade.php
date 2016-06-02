@@ -52,6 +52,12 @@
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/playartist') }}">Artists</a></li>
                 </ul>
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url('/search') }}">Search</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url('/showplaylist') }}">Playlist</a></li>
+                </ul>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
