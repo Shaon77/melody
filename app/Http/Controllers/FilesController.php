@@ -22,7 +22,10 @@ class FilesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    
+    public function __construct()
+    {
+        $this->middleware('isAdmin');
+    }
     public function index()
     {
         //
@@ -139,7 +142,7 @@ class FilesController extends Controller
        }
        else
               {
-               return redirect()->to('/');
+               return redirect()->to('/admin');
 
 
 

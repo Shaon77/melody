@@ -1,7 +1,13 @@
-@extends('layouts.master')
+@extends('layouts.app2')
 @section('content')
-<h2> Upload Album </h2>
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">Upload Album</div>
+
+                <div class="panel-body">
 
 
 <ul>
@@ -47,6 +53,10 @@
    {!! Form::submit('Upload ')     !!}
    {!! Form::close()    !!}
 
-
+             </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 @endsection

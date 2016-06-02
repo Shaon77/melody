@@ -1,6 +1,12 @@
-@extends('layouts.app')
+@extends('layouts.app2')
 @section('content')
-<h2> Upload Song </h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">Upload Song</div>
+
+                <div class="panel-body">
 
 
 @if(count($errors))
@@ -62,9 +68,13 @@
 
    
    {!! Form::token()    !!}
-   {!! Form::submit('Upload bla')     !!}
+   {!! Form::submit('Upload')     !!}
    {!! Form::close()    !!}
 
-
+             </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 @endsection

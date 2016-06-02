@@ -1,6 +1,13 @@
-@extends('layouts.master')
+@extends('layouts.app2')
 @section('content')
-<h2> Select Playlist </h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">Select Playlist</div>
+
+                <div class="panel-body">
 
 
 
@@ -28,6 +35,10 @@
   
    {!! Form::close()    !!}
 
-
+             </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 @endsection

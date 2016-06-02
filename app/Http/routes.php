@@ -21,8 +21,9 @@ Route::group(['middleware' => ['web']],function() {
 	Route::auth();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/admin','AdminController@index');
 
- Route::get('upload','FilesController@upload'); 	
+ Route::get('upload','FilesController@upload');	
 Route::get('/deleteFile/{id}', ['as' => 'deleteFile', 'uses' => 'FilesController@deleteFile']);
 Route::get('/playCheck{id}', ['as' => 'playCheck', 'uses' => 'FilesController@play']);
  Route::post('/handleUpload','FilesController@handleUpload');
