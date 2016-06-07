@@ -8,12 +8,7 @@
 
                 <div class="panel-body">
 
-<!DOCTYPE <!DOCTYPE html>
-<html>
-<head>
-	<title>balsal</title>
-</head>
-<body>
+
 
 Song name:{{$filepath->filename}}
 <br/>
@@ -28,9 +23,10 @@ Genre: {{$filepath->genre}}
   <source src= "app/uploads/{{$filepath->albumName}}/{{$filepath->filename}}" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
+<br/>
+{{ link_to_route('like', 'Like', [$filepath->id] }} 
 
-</body>
-</html>
+
              </div>
             </div>
         </div>

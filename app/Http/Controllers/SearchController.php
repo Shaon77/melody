@@ -72,4 +72,16 @@ class SearchController extends Controller
     	$artists=Artist::where('artistName','LIKE','%'.$name.'%')->get();
     	return view('files.artistlist')->with(array('artists' => $artists ));
     }
+
+    public function homepageSearch(Request $request)
+    {
+
+      $name=$request->input('songName');
+      $songs=UploadedFile::where('filename','LIKE','%'.$name.'%')->get();
+      $albums=Album::where('albumName','LIKE','%'.$name.'%')->get();
+      $artists=Artist::where('artistName','LIKE','%'.$name.'%')->get();
+      return view('files.homeSearch')->with(array('songs' => $songs ))->with(array('albums' => $albums ))->with(array('artists' => $artists ));
+
+
+    }
 }

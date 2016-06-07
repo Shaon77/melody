@@ -61,6 +61,9 @@
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/playlistaddsong') }}">Add to Playlist</a></li>
                 </ul>
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url('/showcount') }}">Total Count</a></li>
+                </ul>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">

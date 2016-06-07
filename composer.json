@@ -6,12 +6,16 @@
     "type": "project",
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.2.*"
+        "laravel/framework": "5.2.*",
+        "barryvdh/laravel-dompdf": "^0.6.1"
+        
         
     },
 
     "require": {
-    "laravelcollective/html": "5.2.*"
+    "laravelcollective/html": "5.2.*",
+    "barryvdh/laravel-dompdf": "^0.6.1"
+
     },
 
     

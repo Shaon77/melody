@@ -9,6 +9,19 @@
 
                 <div class="panel-body">
                     Welcome to melody.com
+                    <br/>
+                    <br/>
+                    <br/>
+                    {!! Form::open(array('url' => '/handleHomePageSearch'))  !!}
+
+                {!! Form::text('songName')                 !!}
+                
+
+
+                 {!! Form::token()    !!}
+                 {!! Form::submit('Search')     !!}
+
+                {!! Form::close()    !!}
                 </div>
             </div>
         </div>

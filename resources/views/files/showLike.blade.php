@@ -13,13 +13,14 @@
 
 
 <ul>
-
+    @if(!empty($songs))
     @foreach($songs as $song)
-    <li> {{ $song->filename }} {{ link_to_route('albumplay', 'play', [$song->id]) }} {{ link_to_route('like', 'Like', $parameters=array($id1=$song->id,$id2=$albumId)) }} </li>
+    <li> {{ $song->filename }} {{ link_to_route('albumplay', 'play', [$song->id]) }}  </li>
 
 
 
     @endforeach
+    @endif
 
 
 </ul>

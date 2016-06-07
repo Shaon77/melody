@@ -15,7 +15,7 @@
 <ul>
 
     @foreach($songs as $song)
-    <li> {{ $song->filename }} {{ link_to_route('artistplay', 'play', [$song->id]) }} </li>
+    <li> {{ $song->filename }} {{ link_to_route('artistplay', 'play', [$song->id]) }} {{ link_to_route('artistlike', 'Like', $parameters=array($id1=$song->id,$id2=$artistId)) }} </li>
 
 
 

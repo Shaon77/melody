@@ -71,6 +71,23 @@ Route::get('/addToPlaylist/{id}/{name}',['as' => 'addToPlaylist', 'uses' => 'Pla
 Route::get('/showplaylist','ShowPlaylistController@show');
 Route::get('/expandSongs{id}', ['as' => 'expandSongs', 'uses' => 'ShowPlaylistController@expand']);
 
+Route::post('/handleHomePageSearch','SearchController@homepageSearch');
+
+Route::get('/like/{id1}/{id2}', ['as' => 'like', 'uses' => 'PlayController@likeSong']);
+Route::get('artistlike/{id1}/{id2}', ['as' => 'artistlike', 'uses' => 'PlayController@artistLike']);
+Route::get('playlistlike/{id1}/{id2}', ['as' => 'playlistlike', 'uses' => 'ShowPlaylistController@playlistLike']);
+
+
+Route::get('showlike','PlayController@showLike');
+
+Route::get('showcount','PlayController@showCount');
+
+Route::get('pdf','AdminController@count');
+
+
+
+
+
 
 });
 

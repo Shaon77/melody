@@ -58,6 +58,9 @@
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/showplaylist') }}">Playlist</a></li>
                 </ul>
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url('/showlike') }}">Liked Songs</a></li>
+                </ul>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
